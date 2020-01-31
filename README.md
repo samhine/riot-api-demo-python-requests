@@ -11,7 +11,7 @@ Your key will look something like this `RGAPI-aa56eod5-a985-4g41-b2a4-ebb75jb2fa
 
 ## Python and Requests
 
-Python is a progamming language which allows you to be relatively concise while defining tasks. It's quite easy to learn, and very powerful when mastered. You can install Python from their website, I'll be using Python 3.7.4, but any 3.X version will work https://www.python.org/downloads/release/python-374/. Navigate to the "Files" section, and download the appropirate installer - allow all options when the installer asks about PATH veriables.
+Python is a progamming language which allows you to be relatively concise while defining tasks. It's quite easy to learn, and very powerful when mastered. You can install Python from their website, I'll be using Python 3.7.4, but any 3.X version will work https://www.python.org/downloads/release/python-374/. Navigate to the "Files" section, and download the appropirate installer - allow all options when the installer asks about PATH variables.
 
 Requests is a module in Python, which allows you to make RESTful requests. REST is simply an agreed upon standard of how a server (in this case Riot's API) and a client (your Python script) should communicate. Riot gives you everything you need to know about the server side of this communication in their API reference https://developer.riotgames.com/apis.
 
@@ -27,8 +27,8 @@ You need to create a project directory. Create a folder anywhere to store the fi
 
 Create a new file called `main.py`, and open it using your favourite text editor. I use VS Code (https://code.visualstudio.com/).
 
-To run `main.py` at any point to check your code is working, open a terminal in the directory and type `python main.py`.
-d
+To run `main.py` at any point to check your code is working, open a terminal in the directory and type `python main.py` (if you can't access access Python this way try following this tutorial: https://www.youtube.com/watch?v=BArhFr06nPM).
+
 Inside the `main.py` file we'll need a few things, copy and paste the following (NB: lines starting with a # are comments, not actual code).
 
 ```
@@ -44,9 +44,6 @@ secret = "YOUR-API-KEY-HERE"
 headers = {
     'X-Riot-Token':secret
 }
-
-# The URL we need to query for EUW based requests
-base_url = ""
 
 ```
 
@@ -70,7 +67,7 @@ response = requests.get("https://euw1.api.riotgames.com/lol/summoner/v4/summoner
 response_readable = response.json()
 # Index (query) the readable response to find the encrypted account ID
 account_id = response_readable["accountId"]
-# Gives: 
+# Gives: DhP5nm0xSVcAr1NJ_v1HsiazPXvRTsmbPSn0RmFYhRtCSQ8
 ```
 
 The above might seem a bit confusing the first time you read through it, but is the core of all the requests we'll be making.
